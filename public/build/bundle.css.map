@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "file": "bundle.css",
+  "sources": [
+    "Column.svelte"
+  ],
+  "sourcesContent": [
+    "<script>\n    export let content;\n    import { fly, scale } from 'svelte/transition';\n    const remove = (e) => e.target.parentElement.remove();\n    let claps = 0;\n    const clap = (e) => claps++;\n</script>\n\n<div class=\"item\" in:fly=\"{{ y: 200, duration: 300 }}\">\n    <span class=\"content\" contenteditable>{content}</span>\n    <button class=\"remove\" on:click={remove}>x</button>\n    <span class=\"claps\" on:click={clap}>👏x{claps}</span>\n</div>\n\n<style>\n    [contenteditable] {\n        background-color: burlywood;\n    }\n</style>"
+  ],
+  "names": [],
+  "mappings": "AAeI,CAAC,eAAe,CAAC,eAAC,CAAC,AACf,gBAAgB,CAAE,SAAS,AAC/B,CAAC"
+}
